@@ -1,0 +1,98 @@
+.contact-page {
+  margin-top: 2rem;
+  height: 75vh;
+  background-color: #454981;
+  color: white;
+  padding: 1.5rem 4rem;
+}
+
+.contact-header {
+  text-align: center;
+}
+
+.send-message-container {
+  display: flex;
+  min-height: 15rem;
+  margin-top: 1rem;
+  justify-content: center;
+  /* background-color: aliceblue; */
+}
+
+.left,
+.right {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.contact-input {
+  width: 80%;
+  height: 3rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.contact-label {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.feedback-message {
+  width: 100%;
+  height: 75%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  resize: none;
+}
+
+.contact-details-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+.contact-details {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 1rem;
+  background-color: #fcc56b;
+  width: 16rem;
+  height: 3.5rem;
+  color: black;
+  border-radius: 0.5rem;
+  transition: 200ms;
+}
+
+.contact-details:hover {
+  transform: scale(1.02);
+}
+
+.icons {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.phone {
+  background-image: url("../../../assets/phone.png");
+}
+
+.mail {
+  background-image: url("../../../assets/mail.png");
+}
+
+.fb {
+  background-image: url("../../../assets/facebook.png");
+}
+.web {
+  background-image: url("../../../assets/web.png");
+}
+
+@media (min-width: 1920px) {
+  .contact-page {
+    height: 60vh;
+  }
+}

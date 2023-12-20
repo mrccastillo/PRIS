@@ -4,7 +4,6 @@ import "./Nav.css";
 function Nav() {
   const [isNavScrolled, setIsNavScrolled] = useState(true);
   const changeNavStyle = () => {
-    console.log(window.scrollY);
     if (window.scrollY > 0) {
       setIsNavScrolled(false);
     } else setIsNavScrolled(true);
@@ -23,13 +22,13 @@ function Nav() {
           <a className="navlink" href="#schedule">
             SCHEDULE
           </a>
-          <a className="navlink" href="">
+          <a className="navlink" href="#ticketing">
             TICKET SERVICES
           </a>
           <a className="navlink" href="#about-us">
             ABOUT US
           </a>
-          <a className="navlink" href="">
+          <a className="navlink" href="#contact">
             CONTACTS
           </a>
         </div>

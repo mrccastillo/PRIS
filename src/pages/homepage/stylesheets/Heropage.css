@@ -1,6 +1,6 @@
 .heropage {
   position: relative;
-  height: 90vh;
+  height: 91vh;
   /* background: linear-gradient(to bottom, #191a4de4, #787cff37),
     url("../../../assets/heropagebg.png"); */
   background-color: #583e37;
@@ -57,6 +57,12 @@
   border-radius: 2rem;
   padding: 2rem;
   width: 35rem;
+}
+
+@media (min-width: 1920px) {
+  .heropage {
+    height: 85vh;
+  }
 }
 
 /* .content-container {
