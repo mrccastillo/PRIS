@@ -1,8 +1,14 @@
-# React + Vite
+# How to run this in your computer?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Install Node in you computer:
+https://nodejs.org/en/download
 
-Currently, two official plugins are available:
+Download this project by clicking the green Code Button
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Install all the dependencies in your vscode terminal:
+npm i
+
+After installing all the dependencies, run this in your terminal:
+npm run dev
+
+ENJOY!
