@@ -2,8 +2,12 @@ import "../stylesheets/Contact.css";
 import phone from "../../../assets/phone.png";
 
 function Contact() {
+  function handleForm(e) {
+    e.preventDefault();
+  }
+
   return (
-    <div className="contact-page" id="contact">
+    <form className="contact-page" id="contact" onClick={handleForm}>
       <h2 className="contact-header">GET IN TOUCH WITH US</h2>
       <div className="send-message-container">
         <div className="left">
@@ -17,12 +21,15 @@ function Contact() {
           </div>
         </div>
         <div className="right">
-          <p className="contact-label">Feedbacks</p>
-          <textarea
-            className="feedback-message"
-            name="feedback"
-            placeholder="// Let us know how we can work for you"
-          ></textarea>
+          <div className="input-container">
+            <p className="contact-label">Feedbacks</p>
+            <textarea
+              className="feedback-message"
+              name="feedback"
+              placeholder="// Let us know how we can work for you"
+            ></textarea>
+          </div>
+          <button className="submit-msg">SUBMIT</button>
         </div>
       </div>
       <div className="contact-details-container">
@@ -43,7 +50,7 @@ function Contact() {
           <p>www.pris.com</p>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 

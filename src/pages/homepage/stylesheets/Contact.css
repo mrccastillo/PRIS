@@ -4,6 +4,7 @@
   background-color: #454981;
   color: white;
   padding: 1.5rem 4rem;
+  z-index: 1;
 }
 
 .contact-header {
@@ -20,14 +21,17 @@
 
 .left,
 .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
+  height: 12rem;
   padding: 0 2rem;
 }
 
 .contact-input {
   width: 80%;
   height: 3rem;
-  margin-bottom: 2rem;
   border-radius: 0.5rem;
 }
 
@@ -38,10 +42,20 @@
 
 .feedback-message {
   width: 100%;
-  height: 75%;
+  height: 5rem;
   padding: 1rem;
   border-radius: 0.5rem;
   resize: none;
+}
+
+.feedback-message::-webkit-scrollbar-thumb {
+  background: rgba(7, 7, 7, 0);
+  border-radius: 10px;
+}
+
+.feedback-message::-webkit-scrollbar-track {
+  background: rgba(7, 7, 7, 0);
+  border-radius: 10px;
 }
 
 .contact-details-container {
@@ -49,6 +63,23 @@
   justify-content: space-between;
   margin-top: 2rem;
   padding: 0 2rem;
+}
+
+.submit-msg {
+  width: 100%;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: #fcc56b;
+  border: 0;
+  transition: 200ms;
+}
+
+.submit-msg:hover {
+  transform: translateY(-0.2rem);
+}
+
+.submit-msg:active {
+  transform: scale(0.98);
 }
 
 .contact-details {
