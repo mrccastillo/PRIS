@@ -41,6 +41,7 @@ a {
 
 input {
   border: none;
+  padding: 0 1rem;
 }
 
 /* span {
@@ -78,6 +79,6 @@ button {
 
 @media (min-width: 1920px) {
   html {
-    font-size: 18px;
+    font-size: 20px;
   }
 }

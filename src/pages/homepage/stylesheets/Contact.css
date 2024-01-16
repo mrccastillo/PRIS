@@ -122,6 +122,14 @@
   background-image: url("../../../assets/web.png");
 }
 
+.ig {
+  background-image: url("../../../assets/instagram-logo.png");
+}
+
+.x {
+  background-image: url("../../../assets/twitter.png");
+}
+
 @media (min-width: 1920px) {
   .contact-page {
     height: 60vh;

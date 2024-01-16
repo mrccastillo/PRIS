@@ -58,8 +58,10 @@
 }
 
 .logo {
+  background: url(../../assets/logo.png);
   width: 2.5rem;
   height: 2.5rem;
+  background-size: cover;
   background-color: rgb(214, 214, 214);
 }
 

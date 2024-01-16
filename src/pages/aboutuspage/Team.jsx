@@ -47,8 +47,26 @@ function Team() {
           >
             <img className="hov" src={thea} width="100%" />
             <div className="member-info">
-              <h4>Althea Marie Mandi</h4>
-              <p>Group Leader and Planner</p>
+              <div className="back">
+                <a href="https://www.facebook.com/Eya.madxsz" target="_blank">
+                  <div
+                    style={{ width: "2.5rem", height: "2.5rem" }}
+                    className="icons fb"
+                  ></div>
+                </a>
+                <div
+                  style={{ width: "2.3rem", height: "2.3rem" }}
+                  className="icons x"
+                ></div>
+                <div
+                  style={{ width: "2.5rem", height: "2.5rem" }}
+                  className="icons ig"
+                ></div>
+              </div>
+              <div className="front">
+                <h4>Althea Marie Mandi</h4>
+                <p>Group Leader and Planner</p>
+              </div>
             </div>
           </motion.div>
 
@@ -61,8 +79,29 @@ function Team() {
           >
             <img className="hov" src={marc} width="100%" />
             <div className="member-info">
-              <h4 className="">Marc Lowel Castillo</h4>
-              <p className="">Frontend and Backend Leader</p>
+              <div className="back">
+                <a
+                  href="https://www.facebook.com/marclowel.castillo"
+                  target="_blank"
+                >
+                  <div
+                    style={{ width: "2.5rem", height: "2.5rem" }}
+                    className="icons fb"
+                  ></div>
+                </a>
+                <div
+                  style={{ width: "2.3rem", height: "2.3rem" }}
+                  className="icons x"
+                ></div>
+                <div
+                  style={{ width: "2.5rem", height: "2.5rem" }}
+                  className="icons ig"
+                ></div>
+              </div>
+              <div className="front">
+                <h4 className="">Marc Lowel Castillo</h4>
+                <p className="">Frontend and Backend Leader</p>
+              </div>
             </div>
           </motion.div>
 
@@ -75,8 +114,26 @@ function Team() {
           >
             <img className="hov" src={tomas} width="100%" />
             <div className="member-info">
-              <h4 className="">Tomas Lyndon Tabuyan</h4>
-              <p className="">Frontend and Backend Assistant</p>
+              <div className="back">
+                <a href="https://www.facebook.com/Tomas22106" target="_blank">
+                  <div
+                    style={{ width: "2.5rem", height: "2.5rem" }}
+                    className="icons fb"
+                  ></div>
+                </a>
+                <div
+                  style={{ width: "2.3rem", height: "2.3rem" }}
+                  className="icons x"
+                ></div>
+                <div
+                  style={{ width: "2.5rem", height: "2.5rem" }}
+                  className="icons ig"
+                ></div>
+              </div>
+              <div className="front">
+                <h4 className="">Tomas Lyndon Tabuyan</h4>
+                <p className="">Frontend and Backend Assistant</p>
+              </div>
             </div>
           </motion.div>
           <motion.div
@@ -88,8 +145,29 @@ function Team() {
           >
             <img className="hov" src={james} width="100%" />
             <div className="member-info">
-              <h4 className="">James Andrei Kalaw</h4>
-              <p className="">Frontend and Backend Assistant</p>
+              <div className="back">
+                <a
+                  href="https://www.facebook.com/james.kalaw.75"
+                  target="_blank"
+                >
+                  <div
+                    style={{ width: "2.5rem", height: "2.5rem" }}
+                    className="icons fb"
+                  ></div>
+                </a>
+                <div
+                  style={{ width: "2.3rem", height: "2.3rem" }}
+                  className="icons x"
+                ></div>
+                <div
+                  style={{ width: "2.5rem", height: "2.5rem" }}
+                  className="icons ig"
+                ></div>
+              </div>
+              <div className="front">
+                <h4 className="">James Andrei Kalaw</h4>
+                <p className="">Frontend and Backend Assistant</p>
+              </div>
             </div>
           </motion.div>
           <motion.div
@@ -101,8 +179,29 @@ function Team() {
           >
             <img className="hov" src={janrey} width="100%" />
             <div className="member-info">
-              <h4 className="">Jan Rey Vargas</h4>
-              <p>Backend Assistant and Image Editor</p>
+              <div className="back">
+                <a
+                  href="https://www.facebook.com/janrey.vargas.35"
+                  target="_blank"
+                >
+                  <div
+                    style={{ width: "2.5rem", height: "2.5rem" }}
+                    className="icons fb"
+                  ></div>
+                </a>
+                <div
+                  style={{ width: "2.3rem", height: "2.3rem" }}
+                  className="icons x"
+                ></div>
+                <div
+                  style={{ width: "2.5rem", height: "2.5rem" }}
+                  className="icons ig"
+                ></div>
+              </div>
+              <div className="front">
+                <h4 className="">Jan Rey Vargas</h4>
+                <p>Backend Assistant and Image Editor</p>
+              </div>
             </div>
           </motion.div>
           <motion.div
@@ -114,8 +213,26 @@ function Team() {
           >
             <img className="hov" src={alex} width="100%" />
             <div className="member-info">
-              <h4 className="">Alexandra Espanillo</h4>
-              <p>Backend Assistant and Image Editor</p>
+              <div className="back">
+                <a href="https://www.facebook.com/aysabelala" target="_blank">
+                  <div
+                    style={{ width: "2.5rem", height: "2.5rem" }}
+                    className="icons fb"
+                  ></div>
+                </a>
+                <div
+                  style={{ width: "2.3rem", height: "2.3rem" }}
+                  className="icons x"
+                ></div>
+                <div
+                  style={{ width: "2.5rem", height: "2.5rem" }}
+                  className="icons ig"
+                ></div>
+              </div>
+              <div className="front">
+                <h4 className="">Alexandra Espanillo</h4>
+                <p>Backend Assistant and Image Editor</p>
+              </div>
             </div>
           </motion.div>
         </div>
