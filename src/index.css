@@ -37,6 +37,7 @@ h4 {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 input {
@@ -75,6 +76,30 @@ button {
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(5px);
   z-index: 1;
+}
+
+.close-btn {
+  color: black;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.8rem;
+}
+
+.success-msg {
+  color: rgba(0, 128, 0, 0.703);
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 1920px) {

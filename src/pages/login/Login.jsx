@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import LoginBanner from "../../assets/login-banner.png";
 import LoginTrain from "../../assets/login-train.png";
 import "./Login.css";
 
-function Login({ isLoggedIn }) {
+function Login({ setLoggedIn }) {
   const [isInLogIn, setIsInLogIn] = useState(true);
   const [steps, setSteps] = useState(1);
 
@@ -12,6 +13,13 @@ function Login({ isLoggedIn }) {
   const [contactNumber, setContactNumber] = useState("");
   const [password, setPassword] = useState("");
 
+  const [username, setUsername] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const navigate = useNavigate();
   async function handleLogin() {
     const user = {
       Contact_Number: contactNumber,
@@ -20,7 +28,40 @@ function Login({ isLoggedIn }) {
 
     try {
       const res = await axios.post("http://localhost:8080/api/login", user);
-      console.log(res);
+      if (res.data[1] === "Logged In!") {
+        setIsInLogIn();
+        localStorage.setItem("isLoggedIn", true.toString()); // Use strings for consistency
+        setLoggedIn(true);
+        localStorage.setItem("user", JSON.stringify(res.data[0]));
+        navigate("/");
+      }
+    } catch (e) {
+      setErrorMsg("Incorrect credentials");
+    }
+  }
+
+  async function handleSignUp() {
+    const createUser = {
+      Contact_Number: contactNumber,
+      User_Password: password,
+      Username: username,
+      First_Name: firstname,
+      Last_Name: lastname,
+      Email: email,
+    };
+
+    const res = await axios.post(
+      "http://localhost:8080/api/signup",
+      createUser
+    );
+    try {
+      if (res.data[1] === "User Created") {
+        setIsInLogIn();
+        localStorage.setItem("isLoggedIn", true.toString()); // Use strings for consistency
+        setLoggedIn(true);
+        localStorage.setItem("user", JSON.stringify(res.data[0]));
+        navigate("/");
+      }
     } catch (e) {
       console.log(e);
     }
@@ -43,7 +84,7 @@ function Login({ isLoggedIn }) {
           </p>
         </div>
         <div className="login-signup-input-container">
-          {steps <= 1 ? (
+          {steps === 1 ? (
             <>
               <div className="input-container">
                 <label className="login-label" htmlFor="phone-number">
@@ -53,6 +94,7 @@ function Login({ isLoggedIn }) {
                   type="text"
                   className="login-input"
                   id="phone-number"
+                  value={contactNumber}
                   onChange={(e) => {
                     setContactNumber(e.target.value);
                   }}
@@ -63,25 +105,19 @@ function Login({ isLoggedIn }) {
                   Password:
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   className="login-input"
                   id="password"
+                  value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
                 />
               </div>
-              {!isInLogIn && (
-                <div className="input-container">
-                  <label className="login-label" htmlFor="confirm-password">
-                    Confirm Password:
-                  </label>
-                  <input
-                    type="text"
-                    className="login-input"
-                    id="confirm-password"
-                  />
-                </div>
+              {errorMsg && (
+                <p className="error-msg" style={{ marginTop: "1rem" }}>
+                  {errorMsg}
+                </p>
               )}
             </>
           ) : steps === 2 ? (
@@ -90,31 +126,62 @@ function Login({ isLoggedIn }) {
                 <label className="login-label" htmlFor="first-name">
                   First Name:
                 </label>
-                <input type="text" className="login-input" id="first-name" />
+                <input
+                  type="text"
+                  className="login-input"
+                  id="first-name"
+                  value={firstname}
+                  onChange={(e) => {
+                    setFirstname(e.target.value);
+                  }}
+                />
               </div>
               <div className="input-container">
                 <label className="login-label" htmlFor="last-name">
                   Last Name:
                 </label>
-                <input type="text" className="login-input" id="last-name" />
+                <input
+                  type="text"
+                  className="login-input"
+                  id="last-name"
+                  value={lastname}
+                  onChange={(e) => {
+                    setLastname(e.target.value);
+                  }}
+                />
               </div>
               <div className="input-container">
                 <label className="login-label" htmlFor="email">
                   E-mail:
                 </label>
-                <input type="text" className="login-input" id="email" />
+                <input
+                  type="text"
+                  className="login-input"
+                  id="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
               </div>
             </>
-          ) : (
-            steps === 3 && (
-              <div className="input-container">
-                <label className="login-label" htmlFor="code">
-                  Code:
-                </label>
-                <input type="text" className="login-input" id="code" />
-              </div>
-            )
-          )}
+          ) : steps === 3 ? (
+            <div className="input-container">
+              <label className="login-label" htmlFor="username">
+                Username:
+              </label>
+              <input
+                type="text"
+                className="login-input"
+                id="username"
+                value={username}
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
+              />
+            </div>
+          ) : null}
+          {/* Added null for other steps */}
         </div>
         <div className="login-signup-button-container">
           <p>
@@ -127,6 +194,7 @@ function Login({ isLoggedIn }) {
               }}
               onClick={() => {
                 setIsInLogIn(!isInLogIn);
+                setSteps(1);
               }}
             >
               {isInLogIn ? " Sign Up" : "Log In"}
@@ -150,6 +218,7 @@ function Login({ isLoggedIn }) {
               <button
                 className="login-signup-button"
                 style={{ marginLeft: "1rem" }}
+                onClick={handleSignUp}
               >
                 Sign Up
               </button>

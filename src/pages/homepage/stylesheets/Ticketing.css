@@ -2,16 +2,28 @@
   position: relative;
 
   padding-top: 3.3rem;
-  height: 85vh;
+  height: 95vh;
   text-align: center;
-  background-color: #e2e0e4;
+  /* background-color: #e2e0e4; */
+  background-image: url("../../../assets/lrt-bg.jpg");
+  background-size: cover;
   z-index: 1;
+}
+
+.ticketing-overlay {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #d0d0d02d;
+  backdrop-filter: blur(5px);
 }
 
 .railways {
   position: absolute;
   width: 100%;
-  top: calc(50% + 3.5rem);
+  top: calc(45% + 3.5rem);
   transform: translateY(-50%);
   display: flex;
   justify-content: space-evenly;
@@ -20,9 +32,8 @@
 .rail-lines {
   /* min-width: 15rem; */
   height: 20rem;
-  background-color: #fcc56b;
-
-  box-shadow: 0px 10px 12px 0px rgb(129, 129, 129);
+  background-color: #7126b6;
+  /* box-shadow: 0px 10px 12px 0px rgb(129, 129, 129); */
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
@@ -39,15 +50,13 @@
 
 .rail-lines:active {
   transform: scale(0.99);
-  box-shadow: 0px 10px 8px 0px rgb(129, 129, 129);
+  /* box-shadow: 0px 10px 8px 0px rgb(129, 129, 129); */
 }
 
 .train-name {
-  width: 90%;
-  height: 3.5rem;
-  padding: 0.7rem 0;
-  background-color: #373d20;
-  color: white;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  width: 100%;
+  color: rgb(255, 255, 255);
   border-radius: 0.4rem;
 }
 
@@ -58,7 +67,7 @@
 
 .ticket-title {
   position: relative;
-  color: #615e64;
+  color: black;
 }
 
 .star {
@@ -73,4 +82,33 @@
 
 .--2 {
   right: 10rem;
+}
+
+.train-name-container {
+  border-top: 10px solid #d4b5ea91;
+  transform: translateY(4rem);
+  padding: 1rem;
+  width: 90%;
+  height: 13rem;
+  background-color: #8c55bf;
+  clip-path: polygon(0 0, 100% 0%, 100% 75%, 50% 100%, 0 75%);
+  z-index: 1;
+}
+
+/* .train-name-container::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -0.5rem;
+  left: 0;
+  background-color: #ac81ba;
+  z-index: 0;
+  clip-path: polygon(0 0, 100% 0%, 100% 75%, 50% 100%, 0 75%);
+} */
+
+@media (min-width: 1920px) {
+  .ticketing {
+    height: 90vh;
+  }
 }

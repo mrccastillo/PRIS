@@ -1,4 +1,5 @@
 import "./LoginRequired.css";
+import { Link } from "react-router-dom";
 
 function LoginRequired({ onCloseModal }) {
   return (
@@ -8,7 +9,9 @@ function LoginRequired({ onCloseModal }) {
           Please Login To Use This Feature!
         </h4>
         <div className="button-container">
-          <button className="--signup">LOG IN</button>
+          <button className="--signup">
+            <Link to="/login">LOG IN</Link>
+          </button>
           <button className="--close" onClick={onCloseModal}>
             CLOSE
           </button>

@@ -1,4 +1,5 @@
 import "../stylesheets/Heropage.css";
+import Video from "../../../assets/hero-vid.mp4";
 
 function HeroPage() {
   return (
@@ -29,7 +30,15 @@ function HeroPage() {
             </p>
           </div>
         </div>
-        <div className="heropage-bg"></div>
+        <div className="heropage-bg">
+          <video
+            autoPlay={true}
+            loop={true}
+            playsInline={true}
+            src={Video}
+            muted
+          />
+        </div>
       </div>
     </>
   );

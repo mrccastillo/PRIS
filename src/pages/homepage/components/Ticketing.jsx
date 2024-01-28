@@ -8,8 +8,7 @@ import Star from "../../../assets/star.png";
 import BuyTicket from "./BuyTicket";
 import LoginRequired from "../../Modals/LoginRequired";
 
-function Ticketing() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+function Ticketing({ user }) {
   const [stationPicked, setStationPicked] = useState();
 
   function onCloseModal() {
@@ -18,11 +17,22 @@ function Ticketing() {
 
   return (
     <>
-      {!stationPicked && (
+      {user && stationPicked ? (
+        <BuyTicket
+          YellowTrain={YellowTrain}
+          WhiteTrain={WhiteTrain}
+          BlueTrain={BlueTrain}
+          OrangeTrain={OrangeTrain}
+          stationPicked={stationPicked}
+          onPreviousPage={onCloseModal}
+          user={user[0]}
+        />
+      ) : (
         <div className="ticketing" id="ticketing">
+          <div className="ticketing-overlay"></div>
           <div className="ticket-title">
             <img className="star --1" src={Star} />
-            <h2>PICK A TRAIN LINE</h2>
+            <h2 style={{ color: "white" }}>PICK A TRAIN LINE</h2>
             <img className="star --2" src={Star} />
           </div>
 
@@ -34,7 +44,9 @@ function Ticketing() {
               }}
             >
               <img src={WhiteTrain} className="train-pics" />
-              <h4 className="train-name">Light Rail Transit 1 (LRT-1)</h4>
+              <div className="train-name-container">
+                <h4 className="train-name">Light Rail Transit 1 (LRT-1)</h4>
+              </div>
             </div>
 
             <div
@@ -44,7 +56,9 @@ function Ticketing() {
               }}
             >
               <img src={YellowTrain} className="train-pics" />
-              <h4 className="train-name">Light Rail Transit 2 (LRT-2)</h4>
+              <div className="train-name-container">
+                <h4 className="train-name">Light Rail Transit 2 (LRT-2)</h4>
+              </div>
             </div>
 
             <div
@@ -54,7 +68,9 @@ function Ticketing() {
               }}
             >
               <img src={BlueTrain} className="train-pics" />
-              <h4 className="train-name">Metro Rail Transit 3 (MRT-3)</h4>
+              <div className="train-name-container">
+                <h4 className="train-name">Metro Rail Transit 3 (MRT-3)</h4>
+              </div>
             </div>
 
             <div
@@ -64,25 +80,14 @@ function Ticketing() {
               }}
             >
               <img src={OrangeTrain} className="train-pics" />
-              <h4 className="train-name">Phil. National Railway (PNR)</h4>
+              <div className="train-name-container">
+                <h4 className="train-name">Phil. National Railway (PNR)</h4>
+              </div>
             </div>
           </div>
         </div>
       )}
-
-      {isLoggedIn && stationPicked && (
-        <BuyTicket
-          YellowTrain={YellowTrain}
-          WhiteTrain={WhiteTrain}
-          BlueTrain={BlueTrain}
-          OrangeTrain={OrangeTrain}
-          stationPicked={stationPicked}
-          onPreviousPage={onCloseModal}
-        />
-      )}
-      {!isLoggedIn && stationPicked && (
-        <LoginRequired onCloseModal={onCloseModal} />
-      )}
+      {!user && stationPicked && <LoginRequired onCloseModal={onCloseModal} />}
     </>
   );
 }
